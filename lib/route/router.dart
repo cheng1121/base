@@ -86,7 +86,7 @@ class AppRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final String name = settings.name;
     final WidgetBuilder pageBuilder = _allPages[name];
-    final RouteArgument argument = settings.arguments;
+    final RouteArgument argument = settings.arguments ?? RouteArgument();
     if (pageBuilder != null) {
       Route route;
       switch (argument.style) {

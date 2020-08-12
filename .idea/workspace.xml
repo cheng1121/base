@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0157328f-800d-4ae4-a9e4-8d8654001fb9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/route/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/route/router.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,19 @@
       <option name="presentableId" value="Default" />
       <updated>1597220696479</updated>
     </task>
+    <task id="LOCAL-00001" summary="remove router assert customAnim == null">
+      <created>1597230501803</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1597230501803</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="remove router assert customAnim == null" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove router assert customAnim == null" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1983" y="40" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597223010519">
@@ -54,17 +65,18 @@
       <screen x="1680" y="-87" width="1920" height="1057" />
     </state>
     <state x="2340" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597222344016" />
-    <state x="616" y="86" key="CommitChangelistDialog2" timestamp="1597230414735">
-      <screen x="0" y="23" width="1680" height="963" />
+    <state x="2384" y="-18" key="CommitChangelistDialog2" timestamp="1597230501586">
+      <screen x="1680" y="-87" width="1920" height="1057" />
     </state>
     <state x="616" y="86" key="CommitChangelistDialog2/1680.-87.1920.1057/0.23.1680.963@0.23.1680.963" timestamp="1597230414735" />
+    <state x="2384" y="-18" key="CommitChangelistDialog2/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597230501586" />
     <state x="2076" y="128" key="IDE.errors.dialog" timestamp="1597227544914">
       <screen x="1680" y="-87" width="1920" height="1057" />
     </state>
     <state x="2076" y="128" key="IDE.errors.dialog/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597227544914" />
-    <state x="2088" y="118" key="Vcs.Push.Dialog.v2" timestamp="1597227552717">
+    <state x="2088" y="118" key="Vcs.Push.Dialog.v2" timestamp="1597230514048">
       <screen x="1680" y="-87" width="1920" height="1057" />
     </state>
-    <state x="2088" y="118" key="Vcs.Push.Dialog.v2/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597227552717" />
+    <state x="2088" y="118" key="Vcs.Push.Dialog.v2/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597230514048" />
   </component>
 </project>
