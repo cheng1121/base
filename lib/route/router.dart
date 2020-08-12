@@ -37,7 +37,7 @@ class RouteArgument {
     this.barrierDismissible = false,
     this.barrierColor,
     this.barrierLabel,
-  }) : assert(style == PageAnimStyle.CUSTOM && customAnim == null);
+  });
 }
 
 ///author: cheng
@@ -158,6 +158,7 @@ class AppRouter {
           );
           break;
         case PageAnimStyle.CUSTOM:
+          assert(argument.customAnim != null);
           route = CustomPageRoute.custom(
             builder: pageBuilder,
             customAnim: argument.customAnim,

@@ -2,150 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0157328f-800d-4ae4-a9e4-8d8654001fb9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/analysis_options.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.0/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.0/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.0/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.3/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/6.3/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/checksums/checksums.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/camera.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/Camera.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/CameraPermissions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/CameraPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/CameraUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/DartMessenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/main/java/io/flutter/plugins/camera/MethodCallHandlerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/test/java/io/flutter/plugins/camera/CameraPermissionsTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/android/src/test/java/io/flutter/plugins/camera/DartMessengerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/camera_android.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/ios/Assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/ios/Classes/CameraPlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/ios/Classes/CameraPlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/ios/Tests/CameraPluginTests.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/ios/camera.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/camera.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/camera_image.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/camera.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/camera_controller.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/camera_testing.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/common/camera_channel.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/common/camera_interface.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/common/camera_mixins.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/common/native_texture.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/support_android/camera.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/lib/new/src/support_android/camera_info.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/test/camera_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera/test/support_android/support_android_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/java/com/jiguang/jmessageflutter/ChatroomHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/java/com/jiguang/jmessageflutter/JMessageUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/java/com/jiguang/jmessageflutter/JmessageFlutterPlugin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/java/com/jiguang/jmessageflutter/JsonUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/android/src/main/java/com/jiguang/jmessageflutter/PushService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/documents/APIs.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/Assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/Classes/JMessageHelper.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/Classes/JMessageHelper.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/Classes/JmessageFlutterPlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/Classes/JmessageFlutterPlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/ios/jmessage_flutter.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/jmessage_flutter.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/jmessage_flutter_android.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/lib/jmessage_flutter.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jmessage_flutter/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/album/app_camera.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/album/app_camera.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.flutter-plugins" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.flutter-plugins-dependencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/runConfigurations/example_lib_main_dart.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/.metadata" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/checkstyle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/consumer-proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/libs/alipay.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/quality.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/kotlin/com/pinto/pay/Ali.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/kotlin/com/pinto/pay/PayPlugin.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/kotlin/com/pinto/pay/Wechat.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/kotlin/com/pinto/pay/WechatCallbackActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/kotlin/com/pinto/pay/WechatReceiver.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/android/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/consumer-proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/Assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/Classes/PayPlugin.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/Classes/PayPlugin.m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/Classes/SwiftPayPlugin.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/ios/pay.podspec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/lib/pay_kit.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/lib/src/pay.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/lib/src/pay_util.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/pay.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/pubspec.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/pubspec.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pay/test/pay_test.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/route/router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/route/router.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,5 +54,17 @@
       <screen x="1680" y="-87" width="1920" height="1057" />
     </state>
     <state x="2340" y="133" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597222344016" />
+    <state x="616" y="86" key="CommitChangelistDialog2" timestamp="1597230414735">
+      <screen x="0" y="23" width="1680" height="963" />
+    </state>
+    <state x="616" y="86" key="CommitChangelistDialog2/1680.-87.1920.1057/0.23.1680.963@0.23.1680.963" timestamp="1597230414735" />
+    <state x="2076" y="128" key="IDE.errors.dialog" timestamp="1597227544914">
+      <screen x="1680" y="-87" width="1920" height="1057" />
+    </state>
+    <state x="2076" y="128" key="IDE.errors.dialog/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597227544914" />
+    <state x="2088" y="118" key="Vcs.Push.Dialog.v2" timestamp="1597227552717">
+      <screen x="1680" y="-87" width="1920" height="1057" />
+    </state>
+    <state x="2088" y="118" key="Vcs.Push.Dialog.v2/1680.-87.1920.1057/0.23.1680.963@1680.-87.1920.1057" timestamp="1597227552717" />
   </component>
 </project>
