@@ -3,7 +3,6 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:base/album/bean/argument.dart';
-import 'package:base/route/page_route.dart';
 import 'package:base/utils/common_util.dart';
 import 'package:base/utils/date_util.dart';
 import 'package:base/utils/image_util.dart';

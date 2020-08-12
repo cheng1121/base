@@ -19,29 +19,33 @@ dependencies:
   connectivity: '>=0.4.9 <2.0.0'
 
   path_provider: ^1.6.11 #抹平android和ios平台 文件路径的差异化
-  shared_preferences: ^0.4.2 #本地轻量化数据存储  类似 Android中的SP
+  shared_preferences: ^0.5.8 #本地轻量化数据存储  类似 Android中的SP
   device_info: ^0.4.2+2 #设备信息
   oktoast: ^2.1.7 # 全局Toast
   provider: ^4.3.1 #状态管理
-  permission_handler: ^3.2.2 #动态权限申请
+  permission_handler: ^5.0.1+1  #动态权限申请
   #图片和视频相关
   photo_manager: ^0.5.6 #从本地图库选择多图(基础api类)
   #图片编辑，展示,网络图片缓存等等
-  extended_image: ^0.9.0
+  extended_image: ^1.1.0
   #图片编辑，原生库
   image_editor: ^0.7.1
   flutter_ffmpeg: ^0.2.10 #ffmpeg命令
   video_player: '>=0.10.11+2 <2.0.0'
-  camera:
-    path: camera
 
-    #上拉加载和下拉刷新
+
+  #上拉加载和下拉刷新
   flutter_easyrefresh: ^2.1.5
 
+  camera:
+    git:
+      url: https://github.com/chengbook/camera.git
   jmessage_flutter:
-    path: jmessage_flutter
+    git:
+      url: https://github.com/chengbook/jmessage.git
   pay:
-    path: pay
+    git:
+      url: https://github.com/chengbook/pay.git
 
 
 
@@ -60,11 +64,11 @@ flutter:
   # adding or updating assets for this project.
   plugin:
     platforms:
-    # This plugin project was generated without specifying any
-    # platforms with the `--platform` argument. If you see the `fake_platform` map below, remove it and
-    # then add platforms following the instruction here:
-    # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
-    # -------------------
+      # This plugin project was generated without specifying any
+      # platforms with the `--platform` argument. If you see the `fake_platform` map below, remove it and
+      # then add platforms following the instruction here:
+      # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
+      # -------------------
       some_platform:
         pluginClass: somePluginClass
     # -------------------

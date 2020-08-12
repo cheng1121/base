@@ -18,9 +18,11 @@ packages:
   camera:
     dependency: "direct main"
     description:
-      path: camera
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "08312ef5ac5c49671cf5c7fcf57cab581db9bb9d"
+      url: "https://github.com/chengbook/camera.git"
+    source: git
     version: "0.5.7+4"
   characters:
     dependency: transitive
@@ -133,7 +135,7 @@ packages:
       name: extended_image
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.9.0"
+    version: "1.1.0"
   extended_image_library:
     dependency: transitive
     description:
@@ -229,9 +231,11 @@ packages:
   jmessage_flutter:
     dependency: "direct main"
     description:
-      path: jmessage_flutter
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: b73787770987773cb3a8f0ad1758905438e09a39
+      url: "https://github.com/chengbook/jmessage.git"
+    source: git
     version: "0.6.2"
   json_annotation:
     dependency: transitive
@@ -306,9 +310,11 @@ packages:
   pay:
     dependency: "direct main"
     description:
-      path: pay
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: b4da7f8b68eb2986b029eb2c24cf23bbd526f1db
+      url: "https://github.com/chengbook/pay.git"
+    source: git
     version: "0.0.1"
   pedantic:
     dependency: transitive
@@ -323,7 +329,14 @@ packages:
       name: permission_handler
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "3.3.0"
+    version: "5.0.1+1"
+  permission_handler_platform_interface:
+    dependency: transitive
+    description:
+      name: permission_handler_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.1"
   photo_manager:
     dependency: "direct main"
     description:
@@ -372,7 +385,35 @@ packages:
       name: shared_preferences
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "0.4.3"
+    version: "0.5.8"
+  shared_preferences_linux:
+    dependency: transitive
+    description:
+      name: shared_preferences_linux
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.2+1"
+  shared_preferences_macos:
+    dependency: transitive
+    description:
+      name: shared_preferences_macos
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.1+10"
+  shared_preferences_platform_interface:
+    dependency: transitive
+    description:
+      name: shared_preferences_platform_interface
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.0.4"
+  shared_preferences_web:
+    dependency: transitive
+    description:
+      name: shared_preferences_web
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.1.2+7"
   sky_engine:
     dependency: transitive
     description: flutter
