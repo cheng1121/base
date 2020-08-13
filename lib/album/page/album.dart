@@ -1,9 +1,8 @@
 import 'dart:async';
 import 'dart:typed_data';
 
-import 'package:base/album/album_item.dart';
+import 'package:base/album/page/album_item.dart';
 import 'package:base/album/bean/album_model.dart';
-import 'package:base/album/bean/argument.dart';
 import 'package:base/album/viewmodels/album_widget_model.dart';
 import 'package:base/album/viewmodels/cover_widget_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,10 +10,19 @@ import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 import 'package:provider/provider.dart';
 
-class AlbumPage extends StatefulWidget {
-  final MediaRouteArgument argument;
+enum AlbumType {
+  all,
+  image,
+  video,
+  audio,
+}
 
-  AlbumPage({this.argument});
+class AlbumPage extends StatefulWidget {
+  final AlbumType albumType;
+  final int maxImage;
+
+  const AlbumPage({Key key, this.albumType = AlbumType.all, this.maxImage = 9})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -24,7 +32,6 @@ class AlbumPage extends StatefulWidget {
 
 ///相册页面
 class _AlbumPageState extends State<AlbumPage> {
-  MediaRouteArgument get argument => widget.argument;
   StreamController<int> _streamController;
 
   @override
@@ -37,7 +44,7 @@ class _AlbumPageState extends State<AlbumPage> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AlbumWidgetModel>(
-      create: (context) => AlbumWidgetModel(argument: argument)..initData(),
+      create: (context) => AlbumWidgetModel(widget.albumType)..initData(),
       builder: (context, child) {
         return Scaffold(
           appBar: AppBar(
@@ -303,7 +310,7 @@ class _AlbumBottom extends StatelessWidget {
                   '完成' +
                       (count == 0
                           ? ''
-                          : '$count/${context.watch<AlbumWidgetModel>().argument.maxImage}'),
+                          : '$count/${9}'),
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),

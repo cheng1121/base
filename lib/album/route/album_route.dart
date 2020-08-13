@@ -1,5 +1,5 @@
-import 'package:base/album/album.dart';
-import 'package:base/album/app_camera.dart';
+import 'package:base/album/page/album.dart';
+import 'package:base/album/page/app_camera.dart';
 import 'package:base/album/crop/image_crop.dart';
 import 'package:base/route/router.dart';
 import 'package:flutter/cupertino.dart';

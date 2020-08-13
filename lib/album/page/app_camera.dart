@@ -231,8 +231,8 @@ class _CustomCameraState extends State<CustomCamera>
       _isVideoComplete = true;
       await stopVideoRecording();
       widget.argument.cropped = false;
-      final argument = MediaRouteArgument.toCameraPreview(
-          widget.argument, true, _videoPath, _scale);
+//      final argument = MediaRouteArgument.toCameraPreview(
+//          widget.argument, true, _videoPath, _scale);
 //      AppPage.replacePage(context, RouteName.cameraPreview,
 //          argument: argument);
     }
@@ -241,8 +241,8 @@ class _CustomCameraState extends State<CustomCamera>
   void onTap() async {
     final path = await takePicture();
     if (path.isNotEmpty) {
-      final argument = MediaRouteArgument.toCameraPreview(
-          widget.argument, false, path, _scale);
+//      final argument = MediaRouteArgument.toCameraPreview(
+//          widget.argument, false, path, _scale);
 //      AppPage.replacePage(context, RouteName.cameraPreview,
 //          arguments: argument);
     }

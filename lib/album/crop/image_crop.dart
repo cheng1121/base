@@ -70,19 +70,19 @@ class _ImageCropPageState extends State<ImageCropPage> {
   void _back() {
     if (widget.isAlbum) {
       ///相册
-      final argument = MediaRouteArgument.toAlbum(
-          maxImage: 1,
-          albumType: AlbumType.image,
-          cropped: true,
-          croppedSize: widget.croppedSize);
+//      final argument = MediaRouteArgument.toAlbum(
+//          maxImage: 1,
+//          albumType: AlbumType.image,
+//          cropped: true,
+//          croppedSize: widget.croppedSize);
 //      AppPage.replacePage(context, AlbumRoute.album, arguments: argument);
     } else {
       ///拍照
-      final argument = MediaRouteArgument.toCamera(
-          hasVideo: false,
-          cropped: true,
-          userAlbum: false,
-          croppedSize: widget.croppedSize);
+//      final argument = MediaRouteArgument.toCamera(
+//          hasVideo: false,
+//          cropped: true,
+//          userAlbum: false,
+//          croppedSize: widget.croppedSize);
 //      AppPage.replacePage(context, RouteName.camera, arguments: argument);
     }
   }

@@ -1,4 +1,4 @@
-import 'package:base/view_models/base_model.dart';
+import 'package:base/view_models/base_view_model.dart';
 import 'package:photo_manager/photo_manager.dart';
 
 class AlbumCoverWidgetModel extends BaseViewModel {
