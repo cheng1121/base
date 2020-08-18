@@ -1,6 +1,7 @@
-import 'package:base/album/page/album.dart';
-import 'package:base/album/page/app_camera.dart';
+import 'package:base/album/album/album.dart';
+import 'package:base/album/camera/app_camera.dart';
 import 'package:base/album/crop/image_crop.dart';
+import 'package:base/album/preview/album_preview.dart';
 import 'package:base/route/router.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -15,6 +16,7 @@ class AlbumRoute {
     crop: (context) => ImageCropPage(),
     album: (context) => AlbumPage(),
     camera: (context) => CustomCamera(),
+    preview: (context) => MediaPreview(),
   };
 
   static void register() {

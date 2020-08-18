@@ -1,3 +1,4 @@
+import 'package:base/utils/common_util.dart';
 import 'package:base/view_models/list_view_model.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
@@ -27,7 +28,6 @@ abstract class RefreshViewModel<T> extends ListViewModel<T> {
     return data;
   }
   Future<List<T>> loadMore() async{
-//    _refreshController.callLoad();
      final data = await loadData(pageNumber: ++ _current);
      if(data == null || data.isEmpty){
        _refreshController.finishLoad(success: true,noMore: true);

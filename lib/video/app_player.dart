@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:base/utils/common_util.dart';
 import 'package:base/video/util/ffmpeg_util.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +44,7 @@ class AppPlayer extends StatefulWidget {
 class _AppPlayerState extends State<AppPlayer> {
   VideoPlayerController _controller;
   Future<bool> _future;
+  bool _futureResult = false;
   int _rotate = 0;
   double _vWidth = -1;
   double _vHeight = -1;
@@ -65,8 +67,11 @@ class _AppPlayerState extends State<AppPlayer> {
 
   @override
   void didUpdateWidget(AppPlayer oldWidget) {
-    initPlayer();
     super.didUpdateWidget(oldWidget);
+    if (widget.url != oldWidget.url) {
+      _futureResult = false;
+      initPlayer();
+    }
   }
 
   @override
@@ -203,15 +208,14 @@ class _AppPlayerState extends State<AppPlayer> {
     return resolvedAlignment.alongOffset(diff);
   }
 
-  Widget _buidVideo() {
+  Widget _buildVideo() {
     return RotatedBox(
       quarterTurns: _rotate ~/ 90,
       child: VideoPlayer(_controller),
     );
   }
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildLayout() {
     return GestureDetector(
       onTap: _onTap,
       child: Container(
@@ -221,30 +225,28 @@ class _AppPlayerState extends State<AppPlayer> {
           color: widget.backgroundColor,
         ),
         alignment: widget.alignment,
-        child: FutureBuilder<bool>(
-          future: _future,
-          builder: (context, snapshot) {
-            if (snapshot.data == true) {
-              return LayoutBuilder(
-                builder: (context, constraints) {
-                  final Size childSize = getTxSize(constraints, widget.fit);
-                  final Offset offset =
-                      getTxOffset(constraints, childSize, widget.fit);
-                  final Rect pos = Rect.fromLTWH(
-                      offset.dx, offset.dy, childSize.width, childSize.height);
-                  List ws = <Widget>[
-                    Container(
-                      width: constraints.maxWidth,
-                      height: constraints.maxHeight,
-                    ),
-                    Positioned.fromRect(
-                        rect: pos,
-                        child: Container(
-                          color: Color(0xFF000000),
-                          child: _buidVideo(),
-                        )),
-                    Offstage(
-                      offstage: (widget.videoIcon == null || !widget.showIcon),
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            final Size childSize = getTxSize(constraints, widget.fit);
+            final Offset offset =
+                getTxOffset(constraints, childSize, widget.fit);
+            final Rect pos = Rect.fromLTWH(
+                offset.dx, offset.dy, childSize.width, childSize.height);
+            List ws = <Widget>[
+              Container(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+              ),
+              Positioned.fromRect(
+                  rect: pos,
+                  child: Container(
+                    color: Color(0xFF000000),
+                    child: _buildVideo(),
+                  )),
+              widget.videoIcon == null
+                  ? Container()
+                  : Offstage(
+                      offstage: !widget.showIcon,
                       child: Offstage(
                         offstage: _controller.value.isPlaying,
                         child: Center(
@@ -256,19 +258,33 @@ class _AppPlayerState extends State<AppPlayer> {
                         ),
                       ),
                     )
-                  ];
-                  return Stack(
-                    children: ws,
-                  );
-                },
-              );
-            } else {
-              return CupertinoActivityIndicator();
-            }
+            ];
+            return Stack(
+              children: ws,
+            );
           },
         ),
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_futureResult) {
+      return _buildLayout();
+    } else {
+      return FutureBuilder<bool>(
+        future: _future,
+        builder: (context, snapshot) {
+          if (snapshot.data == true) {
+            _futureResult = snapshot.data;
+            return _buildLayout();
+          } else {
+            return CupertinoActivityIndicator();
+          }
+        },
+      );
+    }
   }
 }
 

@@ -1,4 +1,7 @@
+import 'package:base/utils/common_util.dart';
 import 'package:flutter/foundation.dart';
+
+const String placeHolderStr = '%s';
 
 extension StringExt on String {
   int toInt({ValueSetter<String> onError}) {
@@ -21,5 +24,22 @@ extension StringExt on String {
         this.replaceAll('\u0020', '').isEmpty;
   }
 
-  
+  String replacePlaceHolder(List<String> strs) {
+    String str ='';
+    final strArrays = this.split(placeHolderStr);
+    if (strArrays.length - 1 != strs.length) {
+      throw Exception('place holder 数量和字符串数量不匹配');
+    }
+    for (int i = 0; i < strArrays.length; i++) {
+      String s = strArrays[i];
+      if(i < strs.length){
+        str += '$s${strs[i]}';
+      }else{
+        str +=s;
+      }
+    }
+    Log.i('replacePlaceHolder','=$str');
+
+    return str;
+  }
 }

@@ -2,14 +2,21 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:base/album/bean/argument.dart';
+import 'package:base/album/album/album.dart';
+import 'package:base/album/bean/album_model.dart';
+import 'package:base/album/bean/album_route_arguments.dart';
+import 'package:base/album/event/image_selected_event.dart';
+import 'package:base/album/local/album_locale.dart';
+import 'package:base/album/route/album_route.dart';
+import 'package:base/route/page_route.dart';
+import 'package:base/route/router.dart';
 import 'package:base/utils/common_util.dart';
 import 'package:base/utils/date_util.dart';
+import 'package:base/utils/file_util.dart';
 import 'package:base/utils/image_util.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
 
 List<CameraDescription> cameras;
 
@@ -18,13 +25,6 @@ Future<void> getAvailableCameras() async {
 }
 
 class CustomCamera extends StatefulWidget {
-  final MediaRouteArgument argument;
-
-  const CustomCamera({
-    Key key,
-    this.argument,
-  }) : super(key: key);
-
   @override
   State<StatefulWidget> createState() {
     return _CustomCameraState();
@@ -39,25 +39,30 @@ class _CustomCameraState extends State<CustomCamera>
   String _videoPath = '';
   bool _isBack = true;
   double _scale = 1.0;
+  AlbumRouteArguments _arguments;
 
   @override
   void initState() {
     super.initState();
 
     WidgetsBinding.instance.addObserver(this);
-    final result = _getCamera(true);
-    if (result == null) {
-      showAppToast('未检测到摄像头');
-      Navigator.of(context).pop();
-    }
-    _isBack = true;
-    onNewCameraSelected(result);
+    init();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _arguments = RouteArgument.getArgument(context);
+    ImageSelectedEvent.getInstance().albumRouteArguments = _arguments;
+    ImageSelectedEvent.getInstance().selected.clear();
+  }
+
+  void init() async {
     _animationController =
         AnimationController(duration: Duration(seconds: 15), vsync: this);
     _animationController.addStatusListener((status) {
       switch (status) {
         case AnimationStatus.dismissed:
-          //onVideoComplete();
           break;
         case AnimationStatus.forward:
           break;
@@ -68,6 +73,17 @@ class _CustomCameraState extends State<CustomCamera>
           break;
       }
     });
+    cameras = await availableCameras();
+    final result = _getCamera(true);
+    if (result == null) {
+      Future.delayed(Duration.zero, () {
+        showAppToast('未检测到摄像头');
+        AppPage.pop(context);
+      });
+    } else {
+      _isBack = true;
+      onNewCameraSelected(result);
+    }
   }
 
   CameraDescription _getCamera(bool back) {
@@ -108,12 +124,18 @@ class _CustomCameraState extends State<CustomCamera>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: <Widget>[
-          _cameraPreviewWidget(),
-          _buildControl(),
-          _buildChangeCamera(),
-        ],
+      body: WillPopScope(
+        onWillPop: () async {
+          ImageSelectedEvent.getInstance().selected.clear();
+          return true;
+        },
+        child: Stack(
+          children: <Widget>[
+            _cameraPreviewWidget(),
+            _buildControl(),
+            _buildChangeCamera(),
+          ],
+        ),
       ),
     );
   }
@@ -131,7 +153,7 @@ class _CustomCameraState extends State<CustomCamera>
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
             child: Image(
-              image: ImageUtil.images(CommonImg.changeCamera),
+              image: ImageUtil.baseImgs(CommonImg.changeCamera),
               width: 30,
               height: 30,
               color: Colors.white,
@@ -143,6 +165,20 @@ class _CustomCameraState extends State<CustomCamera>
   }
 
   Widget _buildControl() {
+    final locale = AlbumLocale.of(context);
+    String text = '';
+    switch (_arguments.albumType) {
+      case AlbumType.all:
+        text = '${locale.allHint}';
+        break;
+      case AlbumType.image:
+        text = '${locale.photoHint}';
+        break;
+      case AlbumType.video:
+        text = '${locale.cameraHint}';
+        break;
+    }
+
     return SafeArea(
       child: Align(
         alignment: Alignment.bottomCenter,
@@ -150,7 +186,7 @@ class _CustomCameraState extends State<CustomCamera>
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Text(
-              '轻触拍照${widget.argument.hasVideo ? '，长按摄像' : ''}',
+              '$text',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -164,7 +200,10 @@ class _CustomCameraState extends State<CustomCamera>
                 Expanded(
                   flex: 1,
                   child: InkWell(
-                    onTap: () => Navigator.of(context).pop(),
+                    onTap: () {
+                      ImageSelectedEvent.getInstance().selected.clear();
+                      AppPage.pop(context);
+                    },
                     child: Container(
                       width: 50,
                       height: 50,
@@ -186,13 +225,13 @@ class _CustomCameraState extends State<CustomCamera>
                     child: GestureDetector(
                       onTap: onTap,
                       onLongPressStart: (details) {
-                        if (!widget.argument.hasVideo) {
+                        if (_arguments.albumType == AlbumType.image) {
                           return;
                         }
                         onVideoStart();
                       },
                       onLongPressEnd: (details) {
-                        if (!widget.argument.hasVideo) {
+                        if (_arguments.albumType == AlbumType.image) {
                           return;
                         }
                         onVideoComplete();
@@ -230,21 +269,18 @@ class _CustomCameraState extends State<CustomCamera>
     if (!_isVideoComplete) {
       _isVideoComplete = true;
       await stopVideoRecording();
-      widget.argument.cropped = false;
-//      final argument = MediaRouteArgument.toCameraPreview(
-//          widget.argument, true, _videoPath, _scale);
-//      AppPage.replacePage(context, RouteName.cameraPreview,
-//          argument: argument);
+      AppPage.nextPage(context, AlbumRoute.preview,
+          argument: RouteArgument.argument(
+              argument: [AlbumModel.withPath(path: _videoPath, type: 2)]));
     }
   }
 
   void onTap() async {
     final path = await takePicture();
     if (path.isNotEmpty) {
-//      final argument = MediaRouteArgument.toCameraPreview(
-//          widget.argument, false, path, _scale);
-//      AppPage.replacePage(context, RouteName.cameraPreview,
-//          arguments: argument);
+      AppPage.nextPage(context, AlbumRoute.preview,
+          argument: RouteArgument.argument(
+              argument: [AlbumModel.withPath(path: path)]));
     }
   }
 
@@ -254,27 +290,19 @@ class _CustomCameraState extends State<CustomCamera>
   }
 
   Future<String> startVideoRecording() async {
-    ///视频保存路径
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final String dirPath = '${dir.path}/pinto/video';
-
-    ///创建图片目录
-    await Directory(dirPath).create(recursive: true);
-    final String videoPath = '$dirPath/${DateUtil.getNowDateMs()}.mp4';
-
+    final path = await cachePath('camera', '${DateUtil.getNowDateMs()}.mp4');
     if (_controller.value.isRecordingVideo) {
       return null;
     }
 
     try {
-      await _controller.startVideoRecording(videoPath);
+      await _controller.startVideoRecording(path);
       _animationController.reset();
       _animationController.forward();
     } on CameraException catch (e) {
       return null;
     }
-
-    return videoPath;
+    return path;
   }
 
   Future<void> stopVideoRecording() async {
@@ -291,23 +319,17 @@ class _CustomCameraState extends State<CustomCamera>
 
   ///拍照
   Future<String> takePicture() async {
-    final Directory dir = await getApplicationDocumentsDirectory();
-    final String dirPath = '${dir.path}/pinto/image';
-
-    ///创建图片目录
-    await Directory(dirPath).create(recursive: true);
-    final String imagePath = '$dirPath/${DateUtil.getNowDateMs()}.jpg';
-
+    final path = await cachePath('camera', '${DateUtil.getNowDateMs()}.jpg');
     if (_controller.value.isTakingPicture) {
       return null;
     }
     try {
-      await _controller.takePicture(imagePath);
+      await _controller.takePicture(path);
     } on CameraException catch (e) {
       return null;
     }
 
-    return imagePath;
+    return path;
   }
 
   ///画面预览界面
@@ -470,7 +492,7 @@ class _CameraBtnPainter extends CustomPainter {
   _CameraBtnPainter({
     this.value = .5,
     this.total = 2 * pi,
-    this.progressColor = Colors.green,
+    this.progressColor = Colors.blue,
     this.progressWidth = 10,
   });
 

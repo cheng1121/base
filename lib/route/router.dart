@@ -26,8 +26,24 @@ class RouteArgument {
   final Color barrierColor;
   final String barrierLabel;
 
+  static Object getArgument(BuildContext context) {
+    return (ModalRoute.of(context).settings.arguments as RouteArgument)
+        .argument;
+  }
+
+  RouteArgument.argument({@required this.argument})
+      : this.style = PageAnimStyle.ANDROID,
+        this.maintainState = true,
+        this.fullscreenDialog = false,
+        this.customAnim = null,
+        this.transitionDuration = const Duration(milliseconds: 300),
+        this.opaque = true,
+        this.barrierDismissible = false,
+        this.barrierColor = null,
+        this.barrierLabel = null;
+
   RouteArgument({
-    this.argument,
+    this.argument = const <String, Object>{},
     this.style = PageAnimStyle.ANDROID,
     this.maintainState = true,
     this.fullscreenDialog = false,
