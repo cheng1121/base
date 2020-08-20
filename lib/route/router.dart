@@ -77,7 +77,7 @@ class AppRouter {
   static bool registerModulePages(
       String moduleName, Map<String, WidgetBuilder> pages) {
     if (!_allModule.contains(moduleName)) {
-      Log.i('AppRouter', '该$moduleName 未注册');
+      Log.i('AppRouter', '该$moduleName 未注册，正在注册中。。');
       _allModule.add(moduleName);
     } else if (_modulePages.containsKey(moduleName)) {
       Log.i('AppRouter', '$moduleName已存在,请修改module name');

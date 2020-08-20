@@ -1,5 +1,8 @@
 # base
 
+### v0.0.4
+添加sqflite数据库操作类DBHelper，部分sql语句封装Sql类。BaseBean
+
 ### v0.0.3
 appConfig下沉到Base中，以供其他模块调用
 
