@@ -1,5 +1,5 @@
 # base
-### v0.0.5
+### v0.0.6
 添加sp_util.dart,SharedPreferences的工具类，单例
 更新第三方插件版本
 
