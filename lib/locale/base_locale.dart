@@ -4,5 +4,4 @@ class BaseLocale {
   final Locale locale;
 
   BaseLocale(this.locale);
-
 }

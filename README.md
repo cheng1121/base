@@ -1,4 +1,8 @@
 # base
+
+### v0.0.8
+添加webview_flutter依赖,webRoute类,web_view类
+
 ### v0.0.7+2
 BaseLocaleDelegate中添加 静态集合supportLanguageCode,设置app支持的语言码
 
@@ -36,7 +40,8 @@ flutter项目的基类 包含：
 
 ### 所有的依赖
 ```
-  sqflite: ^1.3.1 #flutter 中的数据库，可以在Android和iOS中同时使用
+   webview_flutter: ^0.3.22+1
+   sqflite: ^1.3.1 #flutter 中的数据库，可以在Android和iOS中同时使用
    #网络请求
    dio: ^3.0.9
    dio_cookie_manager: ^1.0.0

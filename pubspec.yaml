@@ -1,6 +1,6 @@
 name: base
 description: app base module
-version: 0.0.7+2
+version: 0.0.8
 author: cheng
 homepage: ''
 
@@ -11,6 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  webview_flutter: ^0.3.22+1
   sqflite: ^1.3.1 #flutter 中的数据库，可以在Android和iOS中同时使用
   #网络请求
   dio: ^3.0.9
