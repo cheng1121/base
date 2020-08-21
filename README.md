@@ -1,5 +1,6 @@
 # base
-
+### v0.0.5
+添加sp_util.dart,SharedPreferences的工具类，单例
 ### v0.0.4
 添加sqflite数据库操作类DBHelper，部分sql语句封装Sql类。BaseBean
 
