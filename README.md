@@ -1,7 +1,10 @@
 # base
+### v0.0.7+2
+BaseLocaleDelegate中添加 静态集合supportLanguageCode,设置app支持的语言码
 
 ### v0.0.7+1
 base_locale_delegate添加 const构造
+
 ### v0.0.7
 添加国际化基类
 1. base_locale.dart

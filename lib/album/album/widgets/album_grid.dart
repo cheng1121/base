@@ -22,6 +22,7 @@ class AlbumGrid extends StatelessWidget {
             crossAxisSpacing: 2,
             mainAxisSpacing: 2,
           ),
+
           delegate: SliverChildBuilderDelegate((context, index) {
             final item = albumViewModel.list[index];
             return AlbumItem(

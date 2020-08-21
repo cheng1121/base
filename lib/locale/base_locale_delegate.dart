@@ -6,9 +6,15 @@ abstract class BaseLocaleDelegate<T extends BaseLocale>
     extends LocalizationsDelegate<T> {
   const BaseLocaleDelegate();
 
+  static final supportLanguageCode = <Locale>[
+    const Locale.fromSubtags(languageCode: 'zh')
+  ];
+
   @override
   bool isSupported(Locale locale) {
-    return ['zh'].contains(locale.languageCode);
+    return supportLanguageCode.indexWhere(
+            (element) => element.languageCode == locale.languageCode) >
+        -1;
   }
 
   @override

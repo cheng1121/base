@@ -17,7 +17,7 @@ class AlbumLocale extends BaseLocale {
     return AlbumLocale(Locale('zh'));
   }
 
-  static Map<String, Map<String, String>> _localeValues = {
+   Map<String, Map<String, String>> _localeValues = {
     'zh': {
       'album': '相册',
       'preview': '预览',
