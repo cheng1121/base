@@ -1,5 +1,8 @@
 # base
 
+### v0.0.8+1
+sp返回值全部修改为Future
+ 
 ### v0.0.8
 添加webview_flutter依赖,webRoute类,web_view类
 
