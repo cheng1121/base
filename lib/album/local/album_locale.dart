@@ -1,11 +1,9 @@
-import 'package:base/utils/common_util.dart';
+import 'package:base/locale/base_locale.dart';
 import 'package:flutter/material.dart';
 import 'package:base/extensions/string_extensions.dart';
 
-class AlbumLocale {
-  final Locale locale;
-
-  AlbumLocale(this.locale);
+class AlbumLocale extends BaseLocale {
+  AlbumLocale(Locale locale) : super(locale);
 
   ///author: cheng
   ///date: 2020/8/16

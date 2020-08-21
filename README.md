@@ -1,4 +1,10 @@
 # base
+
+### v0.0.7
+添加国际化基类
+1. base_locale.dart
+2. base_locale.delegate.dart
+
 ### v0.0.6
 添加sp_util.dart,SharedPreferences的工具类，单例
 更新第三方插件版本

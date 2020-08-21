@@ -1,26 +1,10 @@
-
-
 import 'package:base/album/local/album_locale.dart';
+import 'package:base/locale/base_locale_delegate.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 
-class AlbumLocaleDelegate extends LocalizationsDelegate<AlbumLocale>{
-  const AlbumLocaleDelegate();
-
+class AlbumLocaleDelegate extends BaseLocaleDelegate<AlbumLocale> {
   @override
-  bool isSupported(Locale locale) {
-    return ['zh'].contains(locale.languageCode);
+  AlbumLocale appLocale(Locale locale) {
+    return AlbumLocale(locale);
   }
-
-  @override
-  Future<AlbumLocale> load(Locale locale) {
-    return SynchronousFuture<AlbumLocale>(AlbumLocale(locale));
-   }
-
-  @override
-  bool shouldReload(LocalizationsDelegate<AlbumLocale> old) {
-    return false;
-  }
-
-
 }
