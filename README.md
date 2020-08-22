@@ -1,5 +1,8 @@
 # base
 
+### v0.0.8+2
+优化ImageUtil,封装获取module中图片的方法
+
 ### v0.0.8+1
 sp返回值全部修改为Future
  

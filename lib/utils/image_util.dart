@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class ImageUtil {
   ///返回iamges目录中的图片路径
@@ -8,10 +7,10 @@ class ImageUtil {
   }
 
   /// 获取Asset目录中的图片
-  static images(String name, {String package}) =>
-      AssetImage(wrapAssets(name), package: package);
+  static loadAssets(String assetsPath, {String package}) =>
+      AssetImage(assetsPath, package: package);
 
-  static baseImgs(String name) => images(name, package: 'base');
+  static baseImgs(String name) => loadAssets(wrapAssets(name), package: 'base');
 }
 
 class CommonImg {

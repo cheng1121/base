@@ -27,7 +27,7 @@ class _WebViewState extends State<WebViewPage> {
     if (argument is Map) {
       _url = argument['url'];
       _title = argument['title'] ?? '';
-      assert(_url == null, 'url is null');
+      assert(_url != null, 'url is null');
     }
   }
 
@@ -40,11 +40,9 @@ class _WebViewState extends State<WebViewPage> {
           _title,
           style: TextStyle(
             fontSize: 16,
-            color: Colors.black,
           ),
         ),
         centerTitle: true,
-        backgroundColor: Colors.transparent,
         elevation: 0,
       ),
       body: WebView(
