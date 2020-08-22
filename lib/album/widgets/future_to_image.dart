@@ -1,9 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
-
-import 'package:base/album/bean/album_model.dart';
-import 'package:base/utils/resize_file_image.dart';
-import 'package:base/video/util/ffmpeg_util.dart';
 import 'package:base/widgets/busy_widget.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/cupertino.dart';

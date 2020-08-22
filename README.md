@@ -1,5 +1,8 @@
 # base
 
+### v0.0.8+3
+封装library,使用base_kit导出所有文件
+
 ### v0.0.8+2
 优化ImageUtil,封装获取module中图片的方法
 

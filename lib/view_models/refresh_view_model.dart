@@ -1,4 +1,3 @@
-import 'package:base/utils/common_util.dart';
 import 'package:base/view_models/list_view_model.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
